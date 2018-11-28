@@ -12,11 +12,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //.......................
 
-        val binding: com.camachoyury.marvelwiki.databinding.ActivityMainBinding = DataBindingUtil.setContentView(
+        getLifecycle().addObserver(LifecycleSearch());
+
+            val binding: com.camachoyury.marvelwiki.databinding.ActivityMainBinding = DataBindingUtil.setContentView(
             this, R.layout.activity_main)
         val hero = Character(10,"Ironman")
-
         binding.hero = hero
 
 
